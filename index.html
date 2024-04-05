@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anketör</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+
+
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 id="title" class="text-center">Anket Çalışması Örnek Şablonu</h1>
+            <p id="description" class="description text-center">Bu sayfa yalnızca anket sorularını kapsar.</p>
+        </header>
+        <form id="survey-form" action="/submit" method="post">
+            <div class="form-group">
+                <label id="name-label" for="name">Adınız</label>
+                <input
+                type="text"
+                name="name"
+                id="name"
+                class="form-control"
+                placeholder="Adınızı girin"
+                required/>
+            </div>
+            <div class="form-group">
+                <label id="email-label" for="email">Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  class="form-control"
+                  placeholder="Email adresiniz"
+                  required/>
+            </div>
+            <div class="form-group">
+                <label id="number-label" for="number"
+                  >Yaşınız<span class="clue">(İsteğe bağlı)</span></label>
+                <input
+                  type="number"
+                  name="age"
+                  id="number"
+                  min="10"
+                  max="99"
+                  class="form-control"
+                  placeholder="Yaş"/>
+            </div>
+            <div class="form-group">
+                <p>Schopenhauer'in felsefi düşünceleri hangi akıma en yakındır?</p>
+                <select id="dropdown" name="cevabınız" class="form-control" required>
+                  <option disabled selected value>Seçenekler</option>
+                  <option value="Pozitivizm">Pozitivizm</option>
+                  <option value="İdealizm">İdealizm</option>
+                  <option value="Empirizm">Empirizm</option>
+                  <option value="Pesimizm">Pesimizm</option>
+                  <option value="Realizm">Realizm</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <p>Schopenhauer'in en ünlü eseri hangisidir?</p>
+                <label>
+                  <input
+                    name="cevabınız"
+                    value="Sisler içindeki İstanbul"
+                    type="radio"
+                    class="input-radio"
+                    checked/>"Sisler içindeki İstanbul"
+                </label>
+                <label>
+                  <input
+                    name="cevabınız"
+                    value="Madam Bovary"
+                    type="radio"
+                    class="input-radio"/>"Madam Bovary"
+                </label>
+      
+                <label
+                  ><input
+                    name="cevabınız"
+                    value="İnsanın Metafiziği"
+                    type="radio"
+                    class="input-radio"/>"İnsanın Metafiziği"
+                </label>
+                <label
+                  ><input
+                    name="cevabınız"
+                    value="İrade ve Tasarım Üzerine"
+                    type="radio"
+                    class="input-radio"/>"İrade ve Tasarım Üzerine"
+                </label>
+              </div>
+              <div class="form-group">
+                <p>Schopenhauer'in felsefesine göre, insan hayatının temelinde ne vardır?</p>
+                <select id="most-like" name="Cevabınız" class="form-control" required>
+                  <option disabled selected value>Seçenekler</option>
+                  <option value="Mutluluk">Mutluluk</option>
+                  <option value="Acı ve çile">Acı ve çile</option>
+                  <option value="Güç ve iktidar">Güç ve iktidar</option>
+                  <option value="Bilgelik ve anlayış">Bilgelik ve anlayış</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <p>
+                  Sanatın amacı nedir?
+                  <span class="clue">(Birden fazla seçeneği işaretleyebilirsiniz)</span>
+                </p>
+      
+                <label
+                  ><input
+                    name="seçiminiz"
+                    value="İnsan duygularını ifade etmek ve iletmek için bir araçtır"
+                    type="checkbox"
+                    class="input-checkbox"/>İnsan duygularını ifade etmek ve iletmek için bir araçtır
+                </label>
+                <label>
+                  <input
+                    name="seçiminiz"
+                    value="Estetik zevki geliştirmek ve güzellik algısını artırmak içindir"
+                    type="checkbox"
+                    class="input-checkbox"/>Estetik zevki geliştirmek ve güzellik algısını artırmak içindir
+                </label>
+                <label
+                  ><input
+                    name="seçiminiz"
+                    value="Toplumsal mesajlar iletmek ve değişimi teşvik etmek içindir"
+                    type="checkbox"
+                    class="input-checkbox"/>Toplumsal mesajlar iletmek ve değişimi teşvik etmek içindir
+                </label>
+                <label>
+                    <input
+                    name="seçiminiz"
+                    value="Bireysel ve kolektif belleği korumak ve kültürel mirası korumak içindir"
+                    type="checkbox"
+                    class="input-checkbox"/>Bireysel ve kolektif belleği korumak ve kültürel mirası korumak içindir
+                </label>
+              </div>
+              <div class="form-group">
+                <p>Anket hakkında ne düşünüyorsunuz?</p>
+                <textarea id="comments" class="input-textarea" name="Mesajınız" placeholder="Metninizi buraya yazın..."></textarea>
+              </div>
+      
+              <div class="form-group">
+                <button type="submit" id="submit" class="submit-button">
+                  Gönder
+                </button>
+              </div>
+      
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Form Gönderildi</title>
+</head>
+<body>
+    <div class="container"></div>
+    <header class="header">
+        <h1 id="title" class="text-center">Form Gönderildi!</h1>
+        <p id="description" class="description text-center"></p>Form verileriniz başarıyla alındı:</p>
+        <ul>
+            {% for key, value in form_data.items() %}
+                <li><strong>{{ key }}:</strong> {{ value }}</li>
+            {% endfor %}
+        </ul>
+    </header>    
+    </div>    
+</body>
+</html>
