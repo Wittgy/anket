@@ -4,11 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anketör</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="styles.css">
-
-
 </head>
 <body>
+    <div class="bg-pattern"></div>
+    <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+    </div>
     <div class="container">
         <header class="header">
             <h1 id="title" class="text-center">Anket Çalışması Örnek Şablonu</h1>
@@ -49,105 +54,183 @@
             </div>
             <div class="form-group">
                 <p>Schopenhauer'in felsefi düşünceleri hangi akıma en yakındır?</p>
-                <select id="dropdown" name="cevabınız" class="form-control" required>
-                  <option disabled selected value>Seçenekler</option>
-                  <option value="Pozitivizm">Pozitivizm</option>
-                  <option value="İdealizm">İdealizm</option>
-                  <option value="Empirizm">Empirizm</option>
-                  <option value="Pesimizm">Pesimizm</option>
-                  <option value="Realizm">Realizm</option>
-                </select>
+                <div class="select-wrapper">
+                    <select id="dropdown" name="cevabınız" class="form-control" required>
+                      <option disabled selected value>Seçenekler</option>
+                      <option value="Pozitivizm">Pozitivizm</option>
+                      <option value="İdealizm">İdealizm</option>
+                      <option value="Empirizm">Empirizm</option>
+                      <option value="Pesimizm">Pesimizm</option>
+                      <option value="Realizm">Realizm</option>
+                    </select>
+                </div>
             </div>
             <div class="form-group">
                 <p>Schopenhauer'in en ünlü eseri hangisidir?</p>
-                <label>
-                  <input
-                    name="cevabınız"
-                    value="Sisler içindeki İstanbul"
-                    type="radio"
-                    class="input-radio"
-                    checked/>"Sisler içindeki İstanbul"
-                </label>
-                <label>
-                  <input
-                    name="cevabınız"
-                    value="Madam Bovary"
-                    type="radio"
-                    class="input-radio"/>"Madam Bovary"
-                </label>
-      
-                <label
-                  ><input
-                    name="cevabınız"
-                    value="İnsanın Metafiziği"
-                    type="radio"
-                    class="input-radio"/>"İnsanın Metafiziği"
-                </label>
-                <label
-                  ><input
-                    name="cevabınız"
-                    value="İrade ve Tasarım Üzerine"
-                    type="radio"
-                    class="input-radio"/>"İrade ve Tasarım Üzerine"
-                </label>
+                <div class="radio-group">
+                    <label class="radio-label">
+                      <input
+                        name="cevabınız"
+                        value="Sisler içindeki İstanbul"
+                        type="radio"
+                        class="input-radio"
+                        checked/>
+                      <span class="radio-custom"></span>
+                      <span class="radio-text">"Sisler içindeki İstanbul"</span>
+                    </label>
+                    <label class="radio-label">
+                      <input
+                        name="cevabınız"
+                        value="Madam Bovary"
+                        type="radio"
+                        class="input-radio"/>
+                      <span class="radio-custom"></span>
+                      <span class="radio-text">"Madam Bovary"</span>
+                    </label>
+                    <label class="radio-label">
+                      <input
+                        name="cevabınız"
+                        value="İnsanın Metafiziği"
+                        type="radio"
+                        class="input-radio"/>
+                      <span class="radio-custom"></span>
+                      <span class="radio-text">"İnsanın Metafiziği"</span>
+                    </label>
+                    <label class="radio-label">
+                      <input
+                        name="cevabınız"
+                        value="İrade ve Tasarım Üzerine"
+                        type="radio"
+                        class="input-radio"/>
+                      <span class="radio-custom"></span>
+                      <span class="radio-text">"İrade ve Tasarım Üzerine"</span>
+                    </label>
+                </div>
               </div>
               <div class="form-group">
                 <p>Schopenhauer'in felsefesine göre, insan hayatının temelinde ne vardır?</p>
-                <select id="most-like" name="Cevabınız" class="form-control" required>
-                  <option disabled selected value>Seçenekler</option>
-                  <option value="Mutluluk">Mutluluk</option>
-                  <option value="Acı ve çile">Acı ve çile</option>
-                  <option value="Güç ve iktidar">Güç ve iktidar</option>
-                  <option value="Bilgelik ve anlayış">Bilgelik ve anlayış</option>
-                </select>
+                <div class="select-wrapper">
+                    <select id="most-like" name="Cevabınız" class="form-control" required>
+                      <option disabled selected value>Seçenekler</option>
+                      <option value="Mutluluk">Mutluluk</option>
+                      <option value="Acı ve çile">Acı ve çile</option>
+                      <option value="Güç ve iktidar">Güç ve iktidar</option>
+                      <option value="Bilgelik ve anlayış">Bilgelik ve anlayış</option>
+                    </select>
+                </div>
               </div>
               <div class="form-group">
                 <p>
                   Sanatın amacı nedir?
                   <span class="clue">(Birden fazla seçeneği işaretleyebilirsiniz)</span>
                 </p>
-      
-                <label
-                  ><input
-                    name="seçiminiz"
-                    value="İnsan duygularını ifade etmek ve iletmek için bir araçtır"
-                    type="checkbox"
-                    class="input-checkbox"/>İnsan duygularını ifade etmek ve iletmek için bir araçtır
-                </label>
-                <label>
-                  <input
-                    name="seçiminiz"
-                    value="Estetik zevki geliştirmek ve güzellik algısını artırmak içindir"
-                    type="checkbox"
-                    class="input-checkbox"/>Estetik zevki geliştirmek ve güzellik algısını artırmak içindir
-                </label>
-                <label
-                  ><input
-                    name="seçiminiz"
-                    value="Toplumsal mesajlar iletmek ve değişimi teşvik etmek içindir"
-                    type="checkbox"
-                    class="input-checkbox"/>Toplumsal mesajlar iletmek ve değişimi teşvik etmek içindir
-                </label>
-                <label>
-                    <input
-                    name="seçiminiz"
-                    value="Bireysel ve kolektif belleği korumak ve kültürel mirası korumak içindir"
-                    type="checkbox"
-                    class="input-checkbox"/>Bireysel ve kolektif belleği korumak ve kültürel mirası korumak içindir
-                </label>
+                <div class="checkbox-group">
+                    <label class="checkbox-label">
+                      <input
+                        name="seçiminiz"
+                        value="İnsan duygularını ifade etmek ve iletmek için bir araçtır"
+                        type="checkbox"
+                        class="input-checkbox"/>
+                      <span class="checkbox-custom"></span>
+                      <span class="checkbox-text">İnsan duygularını ifade etmek ve iletmek için bir araçtır</span>
+                    </label>
+                    <label class="checkbox-label">
+                      <input
+                        name="seçiminiz"
+                        value="Estetik zevki geliştirmek ve güzellik algısını artırmak içindir"
+                        type="checkbox"
+                        class="input-checkbox"/>
+                      <span class="checkbox-custom"></span>
+                      <span class="checkbox-text">Estetik zevki geliştirmek ve güzellik algısını artırmak içindir</span>
+                    </label>
+                    <label class="checkbox-label">
+                      <input
+                        name="seçiminiz"
+                        value="Toplumsal mesajlar iletmek ve değişimi teşvik etmek içindir"
+                        type="checkbox"
+                        class="input-checkbox"/>
+                      <span class="checkbox-custom"></span>
+                      <span class="checkbox-text">Toplumsal mesajlar iletmek ve değişimi teşvik etmek içindir</span>
+                    </label>
+                    <label class="checkbox-label">
+                        <input
+                        name="seçiminiz"
+                        value="Bireysel ve kolektif belleği korumak ve kültürel mirası korumak içindir"
+                        type="checkbox"
+                        class="input-checkbox"/>
+                      <span class="checkbox-custom"></span>
+                      <span class="checkbox-text">Bireysel ve kolektif belleği korumak ve kültürel mirası korumak içindir</span>
+                    </label>
+                </div>
               </div>
               <div class="form-group">
                 <p>Anket hakkında ne düşünüyorsunuz?</p>
                 <textarea id="comments" class="input-textarea" name="Mesajınız" placeholder="Metninizi buraya yazın..."></textarea>
               </div>
-      
+
               <div class="form-group">
                 <button type="submit" id="submit" class="submit-button">
-                  Gönder
+                  <span class="btn-text">Gönder</span>
+                  <span class="btn-loader"></span>
                 </button>
               </div>
-      
+
         </form>
     </div>
+    <script>
+        const form = document.getElementById('survey-form');
+        const inputs = form.querySelectorAll('input, select, textarea');
+        const progressFill = document.getElementById('progressFill');
+        const total = inputs.length;
+
+        function updateProgress() {
+            let filled = 0;
+            inputs.forEach(input => {
+                if (input.type === 'radio') {
+                    const name = input.name;
+                    const radios = form.querySelectorAll(`input[name="${name}"]`);
+                    const checked = form.querySelector(`input[name="${name}"]:checked`);
+                    if (checked) {
+                        const firstRadio = radios[0];
+                        if (!firstRadio.dataset.counted) {
+                            firstRadio.dataset.counted = 'true';
+                            filled++;
+                        }
+                    } else {
+                        radios.forEach(r => r.dataset.counted = '');
+                    }
+                } else if (input.type === 'checkbox') {
+                    if (input.checked) {
+                        if (!input.dataset.counted) {
+                            input.dataset.counted = 'true';
+                            filled++;
+                        }
+                    } else {
+                        input.dataset.counted = '';
+                    }
+                } else if (input.value && input.value.trim() !== '' && input.value !== 'Seçenekler') {
+                    if (!input.dataset.counted) {
+                        input.dataset.counted = 'true';
+                        filled++;
+                    }
+                } else {
+                    input.dataset.counted = '';
+                }
+            });
+            const pct = Math.min((filled / total) * 100, 100);
+            progressFill.style.width = pct + '%';
+        }
+
+        inputs.forEach(input => {
+            input.addEventListener('change', updateProgress);
+            input.addEventListener('input', updateProgress);
+        });
+        updateProgress();
+
+        form.addEventListener('submit', function(e) {
+            const btn = document.getElementById('submit');
+            btn.classList.add('loading');
+        });
+    </script>
 </body>
 </html>
